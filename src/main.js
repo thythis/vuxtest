@@ -4,22 +4,26 @@ import Vue from 'vue'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
-import Home from './components/HelloFromVux'
-import Hello from './components/Hello'
+// import Home from './components/HelloFromVux'
+// import Hello from './components/Hello'
 
 Vue.use(VueRouter)
 
 const routes = [{
 	path: '/',
-	component: Home
-},{
-	path: '/home',
-	component: Home
-},{
-	path: '/hello',
-	component: Hello	
-}
-]
+	component: resolve => require(['./components/menu'], resolve),
+	redirect: '/home',
+	children: [
+		{
+			path: '/home',
+			component: resolve => require(['./components/HelloFromVux'], resolve)
+		},
+		{
+			path: '/hello',
+			component: resolve => require(['./components/Hello'], resolve)	
+		}
+	]
+}]
 
 const router = new VueRouter({
   routes
