@@ -6,9 +6,11 @@
 		</transition>
 		<tabbar>
 		  <tabbar-item selected  link="/home">
+		  	<i slot="icon" class="iconfont icon-home"></i>
 		    <span slot="label">home</span>
 		  </tabbar-item>
 		  <tabbar-item link="/Hello">
+		  	<i slot="icon" class="iconfont icon-person"></i>
 		    <span slot="label">hello</span>
 		  </tabbar-item>
 		</tabbar>
@@ -26,3 +28,8 @@ export default {
   }
 }
 </script>
+
+<style>
+@import '../assets/css/iconfont.css';
+
+</style>

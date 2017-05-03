@@ -9,6 +9,9 @@ import App from './App'
 
 Vue.use(VueRouter)
 
+
+
+
 const routes = [{
 	path: '/',
 	component: resolve => require(['./components/menu'], resolve),
